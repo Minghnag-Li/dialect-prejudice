@@ -2,7 +2,7 @@ import argparse
 import os
 import pickle
 import random
-
+from dotenv import load_dotenv
 import decouple
 import numpy as np
 import openai
@@ -12,6 +12,8 @@ import tqdm
 
 import helpers
 
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_KEY")
 
 def main():
     random.seed(123)
